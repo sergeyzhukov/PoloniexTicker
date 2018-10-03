@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { ActivityIndicator, View, Text, StyleSheet, SafeAreaView, FlatList } from 'react-native'
-import { NavigationEvents } from "react-navigation"
+import { NavigationEvents } from 'react-navigation'
 import { connect } from 'react-redux'
 import { createSelector } from 'reselect'
+import Icon from 'react-native-vector-icons/Feather'
 import { loadTickers } from '../../API/actions'
 import { createTickersListSelector } from '../../API/selectors'
 import TickerListItem from '../../components/TickerListItem'
-import Icon from 'react-native-vector-icons/Feather'
 
 export class TickersScreen extends Component {
   static navigationOptions = {
