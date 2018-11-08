@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { ActivityIndicator, View, Text, StyleSheet, SafeAreaView, FlatList } from 'react-native'
+import PropTypes from 'prop-types'
 import { NavigationEvents } from 'react-navigation'
 import { connect } from 'react-redux'
 import { createSelector } from 'reselect'
@@ -9,6 +10,20 @@ import { createTickersListSelector } from '../../API/selectors'
 import TickerListItem from '../../components/TickerListItem'
 
 export class TickersScreen extends Component {
+  static propTypes = {
+    tickers: PropTypes.array,
+    isError: PropTypes.bool,
+    isFetching: PropTypes.bool,
+    error: PropTypes.string,
+  }
+
+  static defaultProps = {
+    tickers: [],
+    isError: false,
+    isFetching: false,
+    error: undefined,
+  }
+
   static navigationOptions = {
     tabBarLabel: 'Tickers',
     tabBarIcon: ({ tintColor }) => (

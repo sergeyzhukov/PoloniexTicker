@@ -1,8 +1,16 @@
 import React, { PureComponent } from 'react'
 import { View, Text, StyleSheet, Image } from 'react-native'
+import PropTypes from 'prop-types'
 import PercentIndicator from './img/change_indicator.png'
 
 export default class TickerListItem extends PureComponent {
+  static propTypes = {
+    name: PropTypes.string.isRequired,
+    percentChange: PropTypes.string.isRequired,
+    last: PropTypes.string.isRequired,
+    highestBid: PropTypes.string.isRequired,
+  }
+
   render() {
     const { name, highestBid, percentChange, last } = this.props
     const [currency, secondCurrency] = name.split('_')
